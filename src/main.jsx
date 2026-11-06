@@ -9,7 +9,7 @@ const services = [
   {id:'navidrome', name:'Navidrome', tag:'YOUR MUSIC', description:'A soundtrack for the pause.', Icon:Music2},
   {id:'plex', name:'Plex', tag:'MORE TO EXPLORE', description:'All your entertainment, together.', Icon:Play},
 ];
-const defaults = {jellyfin:'https://alfiejelly.duckdns.org:8443/', navidrome:'https://music.casasola.io/', plex:'https://app.plex.tv/desktop/'};
+const defaults = {jellyfin:'https://jellyfin.casasola.io/', navidrome:'https://music.casasola.io/', plex:'https://app.plex.tv/desktop/'};
 function readSettings() {
   try { const stored = JSON.parse(localStorage.getItem('casasola-theater.urls') || '{}');
     return Object.fromEntries(Object.entries(defaults).map(([key,value])=>[key,Object.hasOwn(stored,key) ? safeUrl(stored[key]) : value]));
